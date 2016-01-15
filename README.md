@@ -12,6 +12,11 @@ CNode.js app written in Swift for iOS
   * [MMDrawerController](https://github.com/mutualmobile/MMDrawerController)
   * [APParallaxHeader](https://github.com/apping/APParallaxHeader)
 
+# Screeshots
+
+![screenshot1](https://raw.githubusercontent.com/klesh/cnodejs-swift/master/Screenshots/cnode-ios-1.png)
+![screenshot1](https://raw.githubusercontent.com/klesh/cnodejs-swift/master/Screenshots/cnode-ios-2.png)
+
 # Author
 
   Klesh Wong
