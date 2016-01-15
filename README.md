@@ -3,8 +3,7 @@
 CNode.js app written in Swift for iOS
 
 # Install
-
-  <a href="itms-services://?action=download-manifest&url=https://github.com/klesh/cnodejs-swift/releases/download/v1.0.1/manifest.plist">over-the-air</a>
+[over-the-air in github.io](https://klesh.github.io)
   
 # Run in XCode Simulator
 
@@ -27,6 +26,7 @@ CNode.js app written in Swift for iOS
   * [Kingfisher](https://github.com/onevcat/Kingfisher)
   * [MMDrawerController](https://github.com/mutualmobile/MMDrawerController)
   * [APParallaxHeader](https://github.com/apping/APParallaxHeader)
+  * [PureLayout](https://github.com/PureLayout/PureLayout)
 
 # Author
 
