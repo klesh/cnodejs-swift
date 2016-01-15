@@ -4,7 +4,7 @@ CNode.js app written in Swift for iOS
 
 # Install
 
-  [over the air](itms-services://?action=download-manifest&url=https%3A//github.com/klesh/cnodejs-swift/releases/download/v1.0.1/manifest.plist)
+  <a href="itms-services://?action=download-manifest&url=https://github.com/klesh/cnodejs-swift/releases/download/v1.0.1/manifest.plist">over-the-air</a>
   
 # Run in XCode Simulator
 
