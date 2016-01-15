@@ -4,8 +4,8 @@ CNode.js app written in Swift for iOS
 
 # Install
 
-  [over the air](https://github.com/klesh/cnodejs-swift/releases/download/v1.0.1/manifest.plist)
-
+  [over the air](itms-services://?action=download-manifest&url=https://github.com/klesh/cnodejs-swift/releases/download/v1.0.1/manifest.plist)
+  
 # Run in XCode Simulator
 
   1. [cocoapods](http://guides.cocoapods.org/using/getting-started.html#installation) is required
