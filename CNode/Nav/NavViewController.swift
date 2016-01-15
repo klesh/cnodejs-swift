@@ -153,7 +153,7 @@ class NavViewController : UITableViewController {
                 }
             )
         } else {
-            self.messageItem.theInfo.hidden = false
+            self.messageItem.theInfo.hidden = true
         }
     }
 }
