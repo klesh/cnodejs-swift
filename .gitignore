@@ -60,3 +60,7 @@ fastlane/screenshots
 
 # ignore pods
 Pods/
+Podfile.lock
+
+# ignore vim swp files
+*.swp
