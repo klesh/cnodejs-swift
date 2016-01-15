@@ -26,6 +26,6 @@ CNode.js app written in Swift for iOS
 
 # Author
 
-  Klesh Wong
-  klesh@qq.com
-  http://kleshwong.com
+  Klesh Wong   
+  klesh@qq.com   
+  http://kleshwong.com   
