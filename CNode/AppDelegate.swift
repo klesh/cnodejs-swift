@@ -7,16 +7,98 @@
 //
 
 import UIKit
+import SwiftyJSON
+import MMDrawerController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var drawer: MMDrawerController!
+    var nav: NavViewController!
+    var topicList: TopicListViewController!
+    
+    var user: (loginname: String, token: String)? {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let token = defaults.objectForKey("token") as? String {
+            return ( loginname: defaults.objectForKey("loginname") as! String, token: token )
+        }
+        return nil
+    }
+    
+    var setting: (draftEnabled: Bool, signatureEnabled: Bool, signatureText: String) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        return (
+            draftEnabled: defaults.boolForKey("draftEnabled"),
+            signatureEnabled: defaults.boolForKey("signatureEnabled"),
+            signatureText: defaults.objectForKey("signatureText") as! String
+        )
+    }
+    
+    func doLogin(loginname: String, token: String) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(loginname, forKey: "loginname")
+        defaults.setObject(token, forKey: "token")
+        defaults.synchronize()
+        nav.reloadLogin()
+    }
+    
+    func doLogout() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.removeObjectForKey("loginname")
+        defaults.removeObjectForKey("token")
+        defaults.synchronize()
+        nav.reloadLogin()
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // create default controller
+        let mainFrame = UIScreen.mainScreen().bounds
+        window = UIWindow(frame: mainFrame)
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let navViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainNavMenu")
+        let topicListViewController = mainStoryboard.instantiateViewControllerWithIdentifier("topicListScene")
+        let mainViewController = UINavigationController(rootViewController: topicListViewController)
+        //mainViewController.hidesBarsOnSwipe = true
+        
+        nav = navViewController as! NavViewController
+        topicList = topicListViewController as! TopicListViewController
+        
+        drawer = MMDrawerController(centerViewController: mainViewController, leftDrawerViewController: navViewController)
+        
+        drawer.maximumLeftDrawerWidth = mainFrame.maxX * 0.7
+        drawer.openDrawerGestureModeMask = .All
+        drawer.closeDrawerGestureModeMask = .All
+        drawer.setDrawerVisualStateBlock { (drawerController, drawerSide, percentVisible) -> Void in
+            
+            var sideDrawerViewController:UIViewController?
+            if(drawerSide == MMDrawerSide.Left){
+                sideDrawerViewController = drawerController.leftDrawerViewController;
+            }
+            sideDrawerViewController?.view.alpha = percentVisible
+        }
+
+        window?.rootViewController = drawer
+        window?.makeKeyAndVisible()
+        
+        // setup default options
+        NSUserDefaults.standardUserDefaults().registerDefaults(
+            [
+                "draftEnabled": true,
+                "signatureEnabled": true,
+                "signatureText": "Sent from CNodejs for iOS"
+            ]
+        )
         return true
+    }
+    
+    func openNavView() {
+        drawer.openDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+    }
+    
+    func closeNavView() {
+        drawer.closeDrawerAnimated(true, completion: nil)
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -41,6 +123,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    class var app: AppDelegate {
+        return UIApplication.sharedApplication().delegate as! AppDelegate
+    }
 }
 
