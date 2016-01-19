@@ -59,7 +59,7 @@ class Utils {
         if (!top) {
             label.backgroundColor = TAB_BG
             label.textColor = UIColor.darkGrayColor()
-            label.text = ApiClient.TABS[tab == nil ? "" : tab!]
+            label.text = ApiClient.getTabText(tab)
         } else {
             label.backgroundColor = TOP_BG
             label.textColor = UIColor.whiteColor()

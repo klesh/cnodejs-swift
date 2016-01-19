@@ -11,12 +11,13 @@ import SwiftyJSON
 
 class ApiClient {
     static let TABS = [
-        "ask": "问答",
-        "share": "分享",
-        "job": "招聘",
-        "good": "精华",
-        "": "全部"
-    ]
+        (name: "", text: "全部"),
+        (name: "good", text: "精华"),
+        (name: "share", text: "分享"),
+        (name: "ask", text: "问答"),
+        (name: "job", text: "招聘")
+    ];
+    
     static let LIMIT = 20
     static let BASE_URL = NSURL(string: "https://cnodejs.org")!
     static let API_URL = "https://cnodejs.org/api/v1"
@@ -34,6 +35,16 @@ class ApiClient {
     // 保存 UIViewController 用于显示警告窗口
     init(_ viewController: UIViewController) {
         self.viewController = viewController
+    }
+    
+    class func getTabText(name: String?) -> String {
+        let n = name == nil ? "" : name!;
+        for (var i = 0; i < ApiClient.TABS.count; i++) {
+            if ApiClient.TABS[i].name == n {
+                return ApiClient.TABS[i].text
+            }
+        }
+        preconditionFailure(String(format: "指定的%s不存在", n))
     }
     
     // 对请求结果进行统一处理，根据是否有错误决定调用 success 还是 error(可选) 。 最后调用 done(可选)

@@ -67,8 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         drawer = MMDrawerController(centerViewController: mainViewController, leftDrawerViewController: navViewController)
         
-        drawer.maximumLeftDrawerWidth = mainFrame.maxX * 0.7
-        drawer.openDrawerGestureModeMask = .All
+        drawer.maximumLeftDrawerWidth = (mainFrame.maxX > mainFrame.maxY ? mainFrame.maxY : mainFrame.maxX) * 0.7
+        drawer.openDrawerGestureModeMask = .PanningNavigationBar
         drawer.closeDrawerGestureModeMask = .All
         drawer.setDrawerVisualStateBlock { (drawerController, drawerSide, percentVisible) -> Void in
             

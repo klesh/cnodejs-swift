@@ -16,6 +16,11 @@ class NavViewController : UITableViewController {
     var messageItem: NavMenuItemView!
     var loading = false
     var loadingUnread = false
+    let optionsData = [
+        (name: "message", text: "消息"),
+        (name: "setting", text: "设置"),
+        (name: "about", text: "关于")
+    ];
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +37,12 @@ class NavViewController : UITableViewController {
         }
         
         // 初始化选项菜单
-        for (code, text) in ["message": "消息", "setting": "设置", "about": "关于"].reverse() {
+        for (name, text) in optionsData {
             let optionCell = tableView.dequeueReusableCellWithIdentifier("navMenuItem") as! NavMenuItemView
-            if code == "message" {
+            if name == "message" {
                 messageItem = optionCell
             }
-            optionCell.bind(code, text: text)
+            optionCell.bind(name, text: text)
             options.append(optionCell)
         }
         
@@ -78,7 +83,10 @@ class NavViewController : UITableViewController {
     
     // 主导航栏选项被点击事件
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.selected = indexPath
+        if indexPath.section == 0 {
+            self.selected = indexPath
+        }
+        
         AppDelegate.app.closeNavView()
         if indexPath.section == 0 {
             let cell = tabs[indexPath.row] as! NavMenuItemView

@@ -13,7 +13,7 @@ class CreateTopicViewController : UIViewController {
     @IBOutlet weak var theTab: UISegmentedControl!
     @IBOutlet weak var theTitle: UITextField!
     
-    static let TAB_CODE = [ "", "ask", "job", "share" ]
+    static let TAB_CODE = [ "share", "ask", "job" ]
     
     override func viewDidLoad() {
         theContent.placeHolder.text = "正文内容"

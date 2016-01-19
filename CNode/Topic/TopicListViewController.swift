@@ -46,7 +46,7 @@ class TopicListViewController: UITableViewController {
     func refresh() {
         loading = true
         page = 1
-        self.navigationItem.title = ApiClient.TABS[self.tab]
+        self.navigationItem.title = ApiClient.getTabText(self.tab)
         self.refreshControl?.beginRefreshing()
         
         // 传入 self 是为了出错时提示警告窗

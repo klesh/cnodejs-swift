@@ -45,14 +45,25 @@ class AHWebView : UIWebView, UIWebViewDelegate {
         
     }
     
-    var reloading = false
-    var prevWidth: CGFloat?
-    var prevHeight: CGFloat?
+    let locker = NSLock();
+    var reloading = false;
     func resizeToFit() {
         if reloading {
             return
+        } else {
+            locker.lock();
+            if !reloading {
+                reloading = true;
+                unsafeResize();
+                reloading = false;
+            }
+            locker.unlock();
         }
-        
+    }
+    
+    var prevWidth: CGFloat?
+    var prevHeight: CGFloat?
+    private func unsafeResize() {
         if finishAt == nil && !forced {
             return
         }
@@ -65,7 +76,6 @@ class AHWebView : UIWebView, UIWebViewDelegate {
         }
         
         if let tableView = getTableView() {
-            reloading = true
             let tableCell = getTableCell()
             let totalMargin = tableCell.frame.height - frame.height
             
@@ -80,7 +90,6 @@ class AHWebView : UIWebView, UIWebViewDelegate {
         
         prevWidth = currWidth
         prevHeight = currHeight
-        reloading = false
     }
 
     // 监测 html 的内容长度变化
@@ -121,7 +130,7 @@ class AHWebView : UIWebView, UIWebViewDelegate {
     
     // 将 html 片段包装到 html 中
     func wrapHTMLString(html: String) -> String {
-        return "<html><head><style> html, body { margin: 0; padding: 0; word-wrap: break-word; } img { max-width:100% } pre { overflow: scroll } </style></head><body>\(html)</body></html>"
+        return "<html><head><style> html, body { margin: 0; padding: 0; word-wrap: break-word; font-family: 'Lucida Grande' } img { max-width:100% } </style></head><body>\(html)</body></html>"
     }
     
     var html: String?
