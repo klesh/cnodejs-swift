@@ -49,7 +49,7 @@
 		C3B758EE1C43CE9600E555B5 /* UserActivitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B758ED1C43CE9600E555B5 /* UserActivitiesCell.swift */; };
 		C3B758F01C43ED9100E555B5 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B758EF1C43ED9100E555B5 /* MessagesViewController.swift */; };
 		C3B758F21C43EDAE00E555B5 /* MessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B758F11C43EDAE00E555B5 /* MessagesCell.swift */; };
-		C3FFC8CF1C3EA2B600607068 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3FFC8CE1C3EA2B600607068 /* fontawesome-webfont.ttf */; };
+		C3D3A7541C51E27700D1D826 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3D3A7531C51E27700D1D826 /* fontawesome-webfont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,7 +119,7 @@
 		C3B758ED1C43CE9600E555B5 /* UserActivitiesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivitiesCell.swift; path = Options/UserActivitiesCell.swift; sourceTree = "<group>"; };
 		C3B758EF1C43ED9100E555B5 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesViewController.swift; path = Options/MessagesViewController.swift; sourceTree = "<group>"; };
 		C3B758F11C43EDAE00E555B5 /* MessagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesCell.swift; path = Options/MessagesCell.swift; sourceTree = "<group>"; };
-		C3FFC8CE1C3EA2B600607068 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fontawesome-webfont.ttf"; path = "../../../../Downloads/font-awesome-4.5.0/fonts/fontawesome-webfont.ttf"; sourceTree = "<group>"; };
+		C3D3A7531C51E27700D1D826 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fontawesome-webfont.ttf"; path = "Fonts/fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		DD370D0BE0410BC2EB94CAD7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -304,7 +304,7 @@
 		C3FFC8CD1C3EA2A700607068 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				C3FFC8CE1C3EA2B600607068 /* fontawesome-webfont.ttf */,
+				C3D3A7531C51E27700D1D826 /* fontawesome-webfont.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -435,10 +435,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3D3A7541C51E27700D1D826 /* fontawesome-webfont.ttf in Resources */,
 				C360768F1C42A26300D40AD9 /* avatar_ph.png in Resources */,
 				C36076891C429B3F00D40AD9 /* nav_bg.png in Resources */,
 				C34B870F1C38D26900C85710 /* LaunchScreen.storyboard in Resources */,
-				C3FFC8CF1C3EA2B600607068 /* fontawesome-webfont.ttf in Resources */,
 				C3B758E61C438EEC00E555B5 /* cnodejs.png in Resources */,
 				C360768B1C429B6B00D40AD9 /* tab_ic_good.png in Resources */,
 				C34B870C1C38D26900C85710 /* Assets.xcassets in Resources */,
