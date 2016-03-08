@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class TopicDetailMainCell: UITableViewCell {
-   
+    
     @IBOutlet weak var topic_title: UILabel!
     @IBOutlet weak var avatar: UIButton!
     @IBOutlet weak var author: UILabel!
@@ -28,7 +28,8 @@ class TopicDetailMainCell: UITableViewCell {
         create_before.text = Utils.relativeTillNow(topic["create_at"].stringValue.toDateFromISO8601())
         Utils.setupTabLabel(tab, top: topic["top"].boolValue, tab: topic["tab"].string)
         visit_count.text = topic["visit_count"].stringValue + " 次浏览"
-        content.loadHTMLAsPageOnce(topic["content"].stringValue, baseURL: ApiClient.BASE_URL)
+        let webContent = "<html xmlns=\"http://www.w3.org/1999/xhtml\"><head><link href=\"index.min.4e4b51cb.min.css\" rel=\"stylesheet\" media=\"all\"></head><body><div id=\"main\"><div id=\"content\"><div class=\"panel\"><div class=\"inner topic\"><div class=\"topic_content\">" + topic["content"].stringValue + "</div></div></div></div></div></body></html>"
+        content.loadHTMLAsPageOnce(webContent, baseURL: NSURL(fileURLWithPath: NSBundle.mainBundle().resourcePath!))
         good.hidden = !topic["good"].boolValue
         
     }
