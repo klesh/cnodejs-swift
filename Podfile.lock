@@ -1,0 +1,39 @@
+PODS:
+  - Alamofire (3.1.4)
+  - APParallaxHeader (0.1.6)
+  - Kingfisher (1.9.0)
+  - MMDrawerController (0.6.0):
+    - MMDrawerController/Core (= 0.6.0)
+    - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
+    - MMDrawerController/MMDrawerVisualStates (= 0.6.0)
+    - MMDrawerController/Subclass (= 0.6.0)
+  - MMDrawerController/Core (0.6.0)
+  - MMDrawerController/MMDrawerBarButtonItem (0.6.0):
+    - MMDrawerController/Core
+  - MMDrawerController/MMDrawerVisualStates (0.6.0):
+    - MMDrawerController/Core
+  - MMDrawerController/Subclass (0.6.0):
+    - MMDrawerController/Core
+  - PureLayout (3.0.1)
+  - SwiftDate (2.0.2)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - APParallaxHeader
+  - Kingfisher
+  - MMDrawerController
+  - PureLayout
+  - SwiftDate
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
+  APParallaxHeader: 854bc48a2487ca12c702f8a236fec0d89cdac5c3
+  Kingfisher: 163bafc1af6ae14d707e76ecba256d8db99dc955
+  MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
+  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
+  SwiftDate: b4f4d0962afe48365ad2800c9850a6626deb9359
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+COCOAPODS: 0.39.0

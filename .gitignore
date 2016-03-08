@@ -60,7 +60,7 @@ fastlane/screenshots
 
 # ignore pods
 Pods/
-Podfile.lock
+#Podfile.lock
 CNode.xcworkspace/
 
 # ignore vim swp files
