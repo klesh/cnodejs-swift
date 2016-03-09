@@ -4,6 +4,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 #link_with 'CNode', 'CNodeTests', 'CNodeUITests', 'MyPlayground'
+target 'CNode' do
 pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'SwiftDate'
@@ -11,3 +12,4 @@ pod 'Kingfisher'
 pod 'MMDrawerController'
 pod 'APParallaxHeader'
 pod 'PureLayout'
+end
