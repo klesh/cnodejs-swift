@@ -21,6 +21,7 @@ class AboutViewController : UITableViewController {
     
     override func viewDidLoad() {
         tableView.addParallaxWithImage(UIImage(named: "about_bg.png"), andHeight: CGFloat(180))
+        tableView.tableFooterView = UIView()
         
         navigationItem.leftBarButtonItem = Utils.navButton(0xf00d, target: self, action: "close")
     }
@@ -51,7 +52,8 @@ class AboutViewController : UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let item = items[indexPath.row]
         if !item.href.isEmpty {
-           UIApplication.sharedApplication().openURL(NSURL(string: item.href)!)
+            UIApplication.sharedApplication().openURL(NSURL(string: item.href)!)
         }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
