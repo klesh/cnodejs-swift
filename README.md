@@ -33,3 +33,7 @@ CNode.js app written in Swift for iOS
   Klesh Wong   
   klesh@qq.com   
   http://kleshwong.com   
+
+# Contributors
+
+  * [Jay Lee](https://github.com/pupboss)

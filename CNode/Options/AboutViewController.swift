@@ -13,6 +13,7 @@ class AboutViewController : UITableViewController {
     let items = [
         (label: "当前版本", text: "1.0.13-build-20151001", href: ""),
         (label: "开发者", text: "Klesh Wong", href: ""),
+        (label: "源代码贡献", text: "https://github.com/pupboss", href: "https://github.com/klesh/cnodejs-swift/blob/master/README.md#contributors"),
         (label: "开源主页", text: "https://github.com/klesh/cnodejs-swift", href: "https://github.com/klesh/cnodejs-swift"),
         (label: "关于CNODE社区", text: "https://cnodejs.org/about", href: "https://cnodejs.org/about"),
         (label: "作者博客", text: "http://kleshwong.com/blog", href: "http://kleshwong.com/blog"),
