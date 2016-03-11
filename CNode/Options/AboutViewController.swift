@@ -11,7 +11,7 @@ import APParallaxHeader
 
 class AboutViewController : UITableViewController {
     let items = [
-        (label: "当前版本", text: "1.0.13-build-20151001", href: ""),
+        (label: "当前版本", text: "1.0.14-build-20160311", href: ""),
         (label: "开发者", text: "Klesh Wong", href: ""),
         (label: "源代码贡献", text: "https://github.com/pupboss", href: "https://github.com/klesh/cnodejs-swift/blob/master/README.md#contributors"),
         (label: "开源主页", text: "https://github.com/klesh/cnodejs-swift", href: "https://github.com/klesh/cnodejs-swift"),
